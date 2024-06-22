@@ -26,9 +26,9 @@ const secreT = process.env.SECRET;
 // Database connection
 
 
-// mongoose.connect(mongoURI)
-//   .then(() => console.log('MongoDB connected...'))
-//   .catch(err => console.error('Error connecting to MongoDB:', err));
+mongoose.connect(mongoURI)
+  .then(() => console.log('MongoDB connected...'))
+  .catch(err => console.error('Error connecting to MongoDB:', err));
 
 
 
@@ -100,7 +100,7 @@ app.use((err, req, res, next) => {
 });
 
 // Listen
-const port = 6060;
-app.listen(port, () => {
-    console.log(`Server is listening on port ${port}`);
-});
+// const port = 6060;
+// app.listen(port, () => {
+//     console.log(`Server is listening on port ${port}`);
+// });
