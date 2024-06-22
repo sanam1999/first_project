@@ -99,8 +99,8 @@ app.use((err, req, res, next) => {
     res.status(statusCode).render("listing/error", { error: { statusCode, message } });
 });
 
-// Listen
-// const port = 6060;
-// app.listen(port, () => {
-//     console.log(`Server is listening on port ${port}`);
-// });
+Listen
+const port = 6060;
+app.listen(port, () => {
+    console.log(`Server is listening on port ${port}`);
+});
