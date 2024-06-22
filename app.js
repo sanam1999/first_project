@@ -26,9 +26,9 @@ const secreT = process.env.SECRET;
 // Database connection
 
 
-mongoose.connect(mongoURI)
-  .then(() => console.log('MongoDB connected...'))
-  .catch(err => console.error('Error connecting to MongoDB:', err));
+// mongoose.connect(mongoURI)
+//   .then(() => console.log('MongoDB connected...'))
+//   .catch(err => console.error('Error connecting to MongoDB:', err));
 
 
 
