@@ -1,5 +1,3 @@
-
-
 require('dotenv').config();
 const express = require('express');
 const app = express();
@@ -43,7 +41,7 @@ app.use(methodOverride('_method'));
 app.engine('ejs', ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
 
-const store = MongoStore.create({
+const Store = MongoStore.create({
     mongoUrl: mongoURI,
     crypto:{
         secret:secreT,
@@ -53,6 +51,7 @@ const store = MongoStore.create({
 
 
 const sessionOptions = {
+    store:Store,
     secret: 'code',
     resave: false,
     saveUninitialized: true,
@@ -99,7 +98,7 @@ app.use((err, req, res, next) => {
     res.status(statusCode).render("listing/error", { error: { statusCode, message } });
 });
 
-///Listen
+// Listen
 const port = 6060;
 app.listen(port, () => {
     console.log(`Server is listening on port ${port}`);
